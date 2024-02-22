@@ -39,7 +39,17 @@ class Tree:
 	
 	# Min Depth
 	def mindepth(self):
-		return -1
+		if self.isempty():
+			return 0
+		left = self.left.mindepth()
+		right = self.right.mindepth()
+		if self.left.isempty() and self.right.isempty():
+			return 1
+		if self.left.isempty():
+			return 1 + right
+		if self.right.isempty():
+			return 1 + left
+		return min(left, right) + 1
 	
 	# Max Depth
 	def maxdepth(self):
