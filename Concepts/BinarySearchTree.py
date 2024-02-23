@@ -94,10 +94,10 @@ class Tree:
 		if self.value == v:
 			return
 		if self.value > v:
-			self.left.insert()
+			self.left.insert(v)
 			return
 		if self.value < v:
-			self.right.insert()
+			self.right.insert(v)
 			return
 	
 	# Make empty
