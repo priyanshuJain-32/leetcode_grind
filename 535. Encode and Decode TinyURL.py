@@ -12,7 +12,3 @@ class Codec:
     def decode(self, shortUrl: str) -> str:
         count = int(shortUrl.split("/")[-1])
         return self.decoded[count]
-
-# Your Codec object will be instantiated and called as such:
-# codec = Codec()
-# codec.decode(codec.encode(url))
