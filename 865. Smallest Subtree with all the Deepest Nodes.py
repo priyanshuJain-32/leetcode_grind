@@ -30,4 +30,4 @@ class Solution:
         i = -1
         while self.inspect[0][i]!=self.inspect[-1][i]:
             i-=1
-        return self.pointers[int(self.inspect[0][i])]
+        return self.pointers[int(self.inspect[0][I])]
