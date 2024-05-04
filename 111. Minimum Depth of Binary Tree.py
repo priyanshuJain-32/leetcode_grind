@@ -2,16 +2,13 @@ class Solution:
     def minDepth(self, root: Optional[TreeNode]) -> int:
         if not root:
             return 0
-        left = self.minDepth(root.left) + 1
-        right = self.minDepth(root.right) + 1
-
-        if not (root.left or root.right):
-            return 1
-        
-        if root.left is None:
-            return right
-        
-        if root.right is None:
-            return left
-        
-        return min(left, right)
+        self.depths = []
+        def travel(root,depth):
+            if not root:
+                return 0
+            if not root.left and not root.right:
+                self.depths.append(depth)
+            travel(root.left,depth+1)
+            travel(root.right,depth+1)
+        travel(root,1)
+        return min(self.depths)
